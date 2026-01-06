@@ -10,6 +10,7 @@ import storybook from 'eslint-plugin-storybook';
 import unicorn from 'eslint-plugin-unicorn';
 
 export default defineConfig([
+	{ ignores: ['eslint.config.mjs'] },
 	eslint.configs.recommended,
 	tseslint.configs.strict,
 	tseslint.configs.stylistic,
