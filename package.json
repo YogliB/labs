@@ -7,7 +7,7 @@
 		"prepare": "husky",
 		"prepare:ai": "cat .ai/rules/*.md > AGENTS.md",
 		"format": "prettier --write .",
-		"lint": "eslint ."
+		"lint": "eslint . --fix"
 	},
 	"repository": {
 		"type": "git",
