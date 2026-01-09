@@ -10,7 +10,15 @@ import storybook from 'eslint-plugin-storybook';
 import unicorn from 'eslint-plugin-unicorn';
 
 export default defineConfig([
-	{ ignores: ['eslint.config.mjs'] },
+	{
+		ignores: [
+			'eslint.config.mjs',
+			'**/coverage/**',
+			'**/dist/**',
+			'packages/*/coverage/**',
+			'packages/*/dist/**',
+		],
+	},
 	eslint.configs.recommended,
 	tseslint.configs.strict,
 	tseslint.configs.stylistic,
