@@ -1,10 +1,10 @@
 ---
 id: task-004
 title: Create core types and domain models
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-01-09 20:15'
-updated_date: '2026-01-09 20:15'
+updated_date: '2026-01-09 20:51'
 labels:
     - types
     - core
