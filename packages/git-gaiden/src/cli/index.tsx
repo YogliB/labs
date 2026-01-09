@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 
-import React from 'react';
-import { render, Text } from 'ink';
+import { existsSync } from 'node:fs';
+import { cwd } from 'node:process';
 import meow from 'meow';
-import { ThemeProvider, useTheme } from '../ui/theme-provider.js';
-import { getTheme } from '../ui/themes.js';
+import { render } from 'ink';
+import { parseRepository } from '../git/parser.js';
+import { GameStateManager } from '../game/state.js';
+import { mapCommitGraphToStory } from '../game/mapper.js';
+import { NarrativeEngine } from '../narrative/engine.js';
+import { Game } from './components/game.js';
 
 const cli = meow(
 	`
@@ -12,35 +16,88 @@ const cli = meow(
 	  $ gaiden [options]
 
 	Options
-	  --help     Show this help message
-	  --version  Show version number
-	  --theme    Theme to use (default, dark, light) [default: default]
+	  --branch, -b    Filter by branch name
+	  --start         Start commit hash to begin from
+	  --model         Model to use for narrative generation (default: phi-3.5-mini)
+	  --reset         Reset game state
+	  --no-cache      Disable scene caching
+	  --help          Show this help message
+	  --version       Show version number
 
 	Examples
 	  $ gaiden
-	  $ gaiden --theme dark
+	  $ gaiden --branch main
+	  $ gaiden --reset
 `,
 	{
 		importMeta: import.meta,
 		flags: {
-			theme: {
+			branch: {
 				type: 'string',
-				default: 'default',
+				shortFlag: 'b',
+			},
+			start: {
+				type: 'string',
+			},
+			model: {
+				type: 'string',
+				default: 'phi-3.5-mini',
+			},
+			reset: {
+				type: 'boolean',
+			},
+			noCache: {
+				type: 'boolean',
 			},
 		},
 	},
 );
 
-function App() {
-	const theme = useTheme();
-	return (
-		<Text color={theme.colors.text}>Git Gaiden - Theme: {theme.name}</Text>
-	);
-}
+try {
+	// Validate repo
+	const repoPath = cwd();
+	if (!existsSync(`${repoPath}/.git`)) {
+		throw new Error('Not a git repository');
+	}
 
-const theme = getTheme(cli.flags.theme);
-render(
-	<ThemeProvider theme={theme}>
-		<App />
-	</ThemeProvider>,
-);
+	// Load state
+	const stateManager = new GameStateManager(repoPath);
+	if (cli.flags.reset) {
+		stateManager.reset();
+	}
+	const gameState = stateManager.load();
+
+	// Parse git
+	const commitGraph = await parseRepository(repoPath, {
+		branch: cli.flags.branch,
+	});
+
+	// Welcome message
+	console.log(
+		`Git Gaiden - Exploring ${commitGraph.commits.length} commits across ${commitGraph.branches.length} branches`,
+	);
+
+	// Init engine
+	const engine = new NarrativeEngine();
+	await engine.initialize();
+
+	// Map to story
+	const storyGraph = mapCommitGraphToStory(commitGraph);
+
+	// Start UI
+	render(
+		<Game
+			storyGraph={storyGraph}
+			gameState={gameState}
+			stateManager={stateManager}
+			engine={engine}
+			startCommit={cli.flags.start}
+		/>,
+	);
+} catch (error) {
+	console.error(
+		'Error:',
+		error instanceof Error ? error.message : String(error),
+	);
+	process.exit(1);
+}
