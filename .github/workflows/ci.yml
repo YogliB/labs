@@ -24,11 +24,8 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
 
-            - name: Remove root npmrc to avoid custom registry
-              run: rm -f .npmrc
-
             - name: Install dependencies
-              run: cd packages/git-gaiden && npm ci --ignore-scripts
+              run: npm ci --ignore-scripts --workspace=git-gaiden --registry=https://registry.npmjs.org/
 
             - name: Run tests with coverage
               run: cd packages/git-gaiden && npm run test:coverage
