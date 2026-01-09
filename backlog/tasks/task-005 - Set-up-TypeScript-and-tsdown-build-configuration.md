@@ -4,6 +4,7 @@ title: Set up TypeScript and tsdown build configuration
 status: To Do
 assignee: []
 created_date: '2026-01-09 20:15'
+updated_date: '2026-01-09 20:15'
 labels:
     - infrastructure
     - build
@@ -31,3 +32,25 @@ Configure TypeScript compiler options and tsdown bundler for ESM output, proper 
 - [ ] #5 npm run build succeeds without errors
 - [ ] #6 Built CLI is executable via node dist/cli.js
   <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+
+1. Create tsconfig.json in package root with: target ES2022, module ESNext, moduleResolution bundler, strict true, esModuleInterop true, skipLibCheck true, outDir dist, declaration true
+2. Create tsdown.config.ts with: entry src/cli/index.ts, format esm, outDir dist, target node18, shims true (for **dirname, **filename), banner #!/usr/bin/env node
+3. Add scripts to package.json: build (tsdown), dev (tsdown --watch), typecheck (tsc --noEmit)
+4. Ensure dist/cli.js is executable and has shebang
+ <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+
+tsdown handles bundling, tree-shaking, and minification
+
+Ensure proper Node.js shims for ESM compatibility
+
+May need to configure externals for native modules
+
+<!-- SECTION:NOTES:END -->
