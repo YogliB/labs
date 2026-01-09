@@ -12,11 +12,10 @@ import unicorn from 'eslint-plugin-unicorn';
 export default defineConfig([
 	{
 		ignores: [
-			'eslint.config.mjs',
 			'**/coverage/**',
 			'**/dist/**',
-			'packages/*/coverage/**',
-			'packages/*/dist/**',
+			'eslint.config.mjs',
+			'packages/*/*.config.ts',
 		],
 	},
 	eslint.configs.recommended,
