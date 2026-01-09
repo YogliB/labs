@@ -23,17 +23,13 @@ export default defineConfig([
 	tseslint.configs.stylistic,
 	sonarjs.configs.recommended,
 	unicorn.configs.recommended,
+	importPlugin.flatConfigs.recommended,
+	importPlugin.flatConfigs.typescript,
 	{
-		files: ['**/*.{ts,tsx}'],
-		extends: [
-			importPlugin.flatConfigs.recommended,
-			importPlugin.flatConfigs.typescript,
-		],
 		settings: {
 			'import/resolver': {
-				typescript: {
-					alwaysTryTypes: true,
-				},
+				typescript: true,
+				node: true,
 			},
 		},
 	},
