@@ -1,7 +1,8 @@
+/* eslint-disable unicorn/filename-case */
+
 import React, { useState, useEffect } from 'react';
 import { Box, Text, useInput } from 'ink';
-import { SelectInput } from '@inkjs/ui';
-import type { StoryNode, GameState } from '../../game/types.js';
+import type { StoryNode } from '../../game/types.js';
 import type { Scene, Choice } from '../../narrative/types.js';
 import type { GameStateManager } from '../../game/state.js';
 import type { NarrativeEngine } from '../../narrative/engine.js';
@@ -11,23 +12,19 @@ import { LoadingScreen } from './loading-screen.js';
 
 interface GameProperties {
 	storyGraph: StoryNode;
-	gameState?: GameState;
 	stateManager: GameStateManager;
 	engine: NarrativeEngine;
-	startCommit?: string;
 }
 
 export function Game({
 	storyGraph,
-	gameState: _gameState,
 	stateManager,
 	engine,
-	startCommit: _startCommit,
 }: GameProperties): React.ReactElement {
 	const [currentNode, setCurrentNode] = useState<StoryNode>(storyGraph);
 	const [scene, setScene] = useState<Scene | undefined>();
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState<string | null>(null);
+	const [error, setError] = useState<string | undefined>();
 
 	useEffect(() => {
 		loadScene(currentNode);
@@ -63,7 +60,7 @@ export function Game({
 		}
 	};
 
-	const handleChoice = (_choice: Choice): void => {
+	const handleChoice = (): void => {
 		// Stub: navigate to next node
 		if (currentNode.children.length > 0) {
 			setCurrentNode(currentNode.children[0]);
@@ -72,7 +69,7 @@ export function Game({
 
 	useInput((input, key) => {
 		if (key.ctrl && input === 'c') {
-			process.exit(0);
+			throw new Error('Exiting...');
 		}
 		if (input === 'r') {
 			stateManager.reset();
@@ -116,29 +113,44 @@ export function Game({
 
 interface ChoiceListProperties {
 	choices: readonly Choice[];
-	onSelect: (choice: Choice) => void;
+	onSelect: () => void;
 }
 
 function ChoiceList({ choices, onSelect }: ChoiceListProperties) {
-	const items = choices.map((choice) => {
-		let color: string;
-		if (choice.type === 'safe') {
-			color = 'green';
-		} else if (choice.type === 'risky') {
-			color = 'yellow';
-		} else {
-			color = 'blue';
+	const [selectedIndex, setSelectedIndex] = useState(0);
+
+	useInput((input, key) => {
+		if (key.upArrow) {
+			setSelectedIndex(Math.max(0, selectedIndex - 1));
+		} else if (key.downArrow) {
+			setSelectedIndex(Math.min(choices.length - 1, selectedIndex + 1));
+		} else if (key.return) {
+			onSelect();
 		}
-		return {
-			label: choice.label,
-			value: choice.id,
-			color,
-		};
 	});
 
 	return (
-		<Box marginTop={1}>
-			<SelectInput items={items} onSelect={onSelect} />
+		<Box flexDirection="column" marginTop={1}>
+			<Text>Use ↑↓ to navigate, Enter to select:</Text>
+			{choices.map((choice, index) => {
+				let color: string;
+				if (choice.type === 'safe') {
+					color = 'green';
+				} else if (choice.type === 'risky') {
+					color = 'yellow';
+				} else {
+					color = 'blue';
+				}
+				return (
+					<Text
+						key={choice.id}
+						color={index === selectedIndex ? 'cyan' : color}
+					>
+						{index === selectedIndex ? '→ ' : '  '}
+						{choice.label}
+					</Text>
+				);
+			})}
 		</Box>
 	);
 }
