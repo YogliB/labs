@@ -4,11 +4,12 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"prepare": "husky",
+		"prepare": "husky && npm run prepare:ai",
 		"prepare:ai": "cat .ai/rules/*.md > AGENTS.md",
 		"format": "prettier --write .",
 		"lint": "eslint . --fix",
-		"backlog": "backlog"
+		"backlog": "backlog",
+		"backlog:browser": "backlog browser"
 	},
 	"repository": {
 		"type": "git",
