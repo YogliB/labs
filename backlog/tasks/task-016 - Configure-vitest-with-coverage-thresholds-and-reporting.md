@@ -1,10 +1,10 @@
 ---
 id: task-016
 title: Configure vitest with coverage thresholds and reporting
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-01-09 20:31'
-updated_date: '2026-01-09 20:53'
+updated_date: '2026-01-09 20:56'
 labels:
     - testing
     - infrastructure
