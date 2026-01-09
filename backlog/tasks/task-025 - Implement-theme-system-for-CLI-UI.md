@@ -1,10 +1,10 @@
 ---
 id: task-025
 title: Implement theme system for CLI UI
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-01-09 21:18'
-updated_date: '2026-01-09 21:18'
+updated_date: '2026-01-09 21:19'
 labels: []
 dependencies: []
 priority: medium
