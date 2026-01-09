@@ -4,6 +4,7 @@ title: Implement game state management and persistence
 status: To Do
 assignee: []
 created_date: '2026-01-09 20:16'
+updated_date: '2026-01-09 20:16'
 labels:
     - game
     - state
@@ -32,3 +33,27 @@ Create game/state.ts to track player progress through the story: current scene, 
 - [ ] #6 Progress metrics accurately reflect exploration
 - [ ] #7 Handles missing or corrupted state files gracefully
   <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+
+1. Create src/game/state.ts
+2. Implement GameStateManager class with: load(repoPath: string) to load existing state or create new, save(state: GameState) to persist to JSON, update(changes: Partial<GameState>) to merge updates, reset() to clear state and start fresh
+3. State file location logic: check for repo-specific at <repo>/.git-gaiden.json, fallback to global at ~/.git-gaiden/state/<repo-hash>.json
+4. Implement progress calculation: commits explored / total commits ratio, branch coverage metrics
+5. Add state validation on load (schema check)
+6. Handle concurrent access (file locking if needed)
+ <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+
+Use sync fs operations for simplicity (CLI context)
+
+Consider zod or similar for state validation
+
+State should include timestamp for last played info
+
+<!-- SECTION:NOTES:END -->
