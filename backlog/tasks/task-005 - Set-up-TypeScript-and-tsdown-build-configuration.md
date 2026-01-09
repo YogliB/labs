@@ -1,10 +1,10 @@
 ---
 id: task-005
 title: Set up TypeScript and tsdown build configuration
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-01-09 20:15'
-updated_date: '2026-01-09 20:52'
+updated_date: '2026-01-09 20:53'
 labels:
     - infrastructure
     - build
