@@ -24,6 +24,9 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
 
+            - name: Configure npm registry
+              run: npm config set registry https://registry.npmjs.org/
+
             - name: Install dependencies
               run: cd packages/git-gaiden && npm ci --ignore-scripts
 
