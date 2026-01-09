@@ -12,7 +12,7 @@ import type { Commit, BranchInfo } from './types.js';
 
 // Mock simple-git
 vi.mock('simple-git', () => ({
-	default: vi.fn(),
+	simpleGit: vi.fn(),
 }));
 
 const mockSimpleGit = vi.mocked(simpleGit);
