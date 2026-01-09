@@ -4,6 +4,7 @@ title: Implement narrative engine with local LLM integration
 status: To Do
 assignee: []
 created_date: '2026-01-09 20:16'
+updated_date: '2026-01-09 20:16'
 labels:
     - narrative
     - llm
@@ -33,3 +34,29 @@ Create narrative/engine.ts that transforms a Commit into a Scene using phi-3.5-m
 - [ ] #6 Context (previous scene, branch) influences generation
 - [ ] #7 Prompts are well-structured and produce consistent results
   <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+
+1. Create src/narrative/engine.ts
+2. Implement NarrativeEngine class with: initialize(modelId: string) to load model (uses model downloader), generateScene(commit: Commit, context?: GameState) as main method
+3. Create src/narrative/prompts.ts with: buildScenePrompt(commit) to format commit data into LLM prompt, include system prompt defining output format, enforce strict structure (SCENE: ... SAFE: ... RISKY: ... META: ...)
+4. Implement response parsing to: extract scene text, parse choice options (2-3 choices minimum), validate and type-cast to Scene interface, handle malformed responses with retry or fallback
+5. Add context injection (previous commits, branch name, contributor info)
+6. Implement deterministic fallback for when model unavailable
+ <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+
+Start with deterministic template fallback, add model later
+
+Prompt engineering is critical for quality
+
+Consider few-shot examples in system prompt
+
+May need temperature tuning for creativity vs consistency
+
+<!-- SECTION:NOTES:END -->
