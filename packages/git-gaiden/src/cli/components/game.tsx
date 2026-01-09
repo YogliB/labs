@@ -67,7 +67,7 @@ export function Game({
 
 	useInput((input, key) => {
 		if (key.ctrl && input === 'c') {
-			process.exit(0);
+			throw new Error('User requested exit');
 		}
 		if (input === 'r') {
 			stateManager.reset();
