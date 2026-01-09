@@ -28,7 +28,7 @@ jobs:
               run: npm ci --ignore-scripts --registry=https://registry.npmjs.org/
 
             - name: Install workspace dependencies
-              run: npm ci --workspace=git-gaiden --ignore-scripts --registry=https://registry.npmjs.org/
+              run: npm ci --workspace=git-gaiden --registry=https://registry.npmjs.org/
 
             - name: Run tests with coverage
               run: cd packages/git-gaiden && npm run test:coverage
