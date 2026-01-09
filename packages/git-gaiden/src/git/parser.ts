@@ -1,4 +1,4 @@
-import simpleGit from 'simple-git';
+import { simpleGit } from 'simple-git';
 import type { Commit, BranchInfo, CommitGraph } from './types.js';
 
 export interface ParseOptions {
