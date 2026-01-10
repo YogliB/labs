@@ -1,10 +1,10 @@
 ---
 id: task-026
 title: Implement CLI integration tests
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-10 22:35'
-updated_date: '2026-01-10 22:38'
+updated_date: '2026-01-10 22:58'
 labels:
     - testing
     - phase-6
