@@ -1,10 +1,10 @@
 ---
 id: task-007
 title: Implement narrative engine with local LLM integration
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-09 20:16'
-updated_date: '2026-01-09 20:16'
+updated_date: '2026-01-10 22:30'
 labels:
     - narrative
     - llm

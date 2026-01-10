@@ -1,10 +1,10 @@
 ---
 id: task-014
 title: Write package README.md documentation
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-09 20:18'
-updated_date: '2026-01-09 20:18'
+updated_date: '2026-01-10 22:29'
 labels:
     - documentation
 dependencies:

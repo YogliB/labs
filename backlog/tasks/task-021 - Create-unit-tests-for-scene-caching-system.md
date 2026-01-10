@@ -1,10 +1,10 @@
 ---
 id: task-021
 title: Create unit tests for scene caching system
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-09 20:32'
-updated_date: '2026-01-09 20:32'
+updated_date: '2026-01-10 22:29'
 labels:
     - testing
     - narrative

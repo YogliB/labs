@@ -1,10 +1,10 @@
 ---
 id: task-022
 title: Create unit tests for config paths module
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-09 20:32'
-updated_date: '2026-01-09 20:32'
+updated_date: '2026-01-10 22:29'
 labels:
     - testing
     - infrastructure
@@ -59,11 +59,8 @@ Create comprehensive unit tests for src/config/paths.ts. Tests should validate X
     - Respects XDG_CACHE_HOME when set
     - Falls back correctly when unset
     - Handles empty XDG_CACHE_HOME as unset
-7. Test edge cases:
-    - Paths with spaces or special characters
-    - Very long paths
-    - Relative vs absolute path handling
-      <!-- SECTION:PLAN:END -->
+7. Test edge cases: - Paths with spaces or special characters - Very long paths - Relative vs absolute path handling
+ <!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
 

@@ -1,10 +1,10 @@
 ---
 id: task-020
 title: Create unit tests for story mapper
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-09 20:32'
-updated_date: '2026-01-09 20:32'
+updated_date: '2026-01-10 22:29'
 labels:
     - testing
     - game

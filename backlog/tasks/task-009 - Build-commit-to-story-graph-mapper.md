@@ -1,10 +1,10 @@
 ---
 id: task-009
 title: Build commit-to-story graph mapper
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-09 20:16'
-updated_date: '2026-01-09 20:16'
+updated_date: '2026-01-10 22:29'
 labels:
     - game
     - mapping

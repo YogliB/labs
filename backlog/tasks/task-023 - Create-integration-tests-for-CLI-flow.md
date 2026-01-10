@@ -1,10 +1,10 @@
 ---
 id: task-023
 title: Create integration tests for CLI flow
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-09 20:32'
-updated_date: '2026-01-09 20:33'
+updated_date: '2026-01-10 22:30'
 labels:
     - testing
     - cli

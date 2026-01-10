@@ -1,10 +1,10 @@
 ---
 id: task-011
 title: Create model download and initialization flow
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-09 20:17'
-updated_date: '2026-01-09 20:17'
+updated_date: '2026-01-10 22:29'
 labels:
     - infrastructure
     - llm
