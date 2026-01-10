@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import '../polyfills.js';
 import { existsSync } from 'node:fs';
 import { cwd } from 'node:process';
 import meow from 'meow';
