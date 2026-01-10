@@ -42,6 +42,6 @@ function getCacheDirectory(): string {
 		: path.join(getDataDirectory(), 'cache');
 }
 
-export const modelsDirectory = path.join(getDataDirectory(), 'models');
-export const cacheDirectory = getCacheDirectory();
-export const stateDirectory = path.join(getDataDirectory(), 'state');
+export const modelsDirectory: string = path.join(getDataDirectory(), 'models');
+export const cacheDirectory: string = getCacheDirectory();
+export const stateDirectory: string = path.join(getDataDirectory(), 'state');
