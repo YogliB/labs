@@ -11,26 +11,20 @@ jobs:
     test:
         runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node: [18, 20, 22]
-
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
+            - name: Setup Bun
+              uses: oven-sh/setup-bun@v1
               with:
-                  node-version: ${{ matrix.node }}
+                  bun-version: latest
 
             - name: Install dependencies
-              run: npm ci --registry=https://registry.npmjs.org/
-              env:
-                  CI: true
+              run: bun install
 
             - name: Run tests with coverage
-              run: cd packages/git-gaiden && npm run test:coverage
+              run: cd packages/git-gaiden && bun run test:coverage
 
             - name: Upload coverage to Codecov
               uses: codecov/codecov-action@v4
@@ -42,5 +36,5 @@ jobs:
             - name: Upload coverage report
               uses: actions/upload-artifact@v4
               with:
-                  name: coverage-report-${{ matrix.node }}
+                  name: coverage-report
                   path: packages/git-gaiden/coverage/
