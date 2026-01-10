@@ -38,7 +38,7 @@ ${contextSummary}
 Generate the scene and choices:`;
 }
 
-function buildCommitSummary(commit: Commit): string {
+export function buildCommitSummary(commit: Commit): string {
 	const message = commit.message.trim() || '[empty commit message]';
 	const author = commit.author;
 	const date = new Date(commit.date).toLocaleDateString();
@@ -72,7 +72,7 @@ Note: Large commit with many files changed`;
 	return summary;
 }
 
-function buildContextSummary(context: PromptContext): string {
+export function buildContextSummary(context: PromptContext): string {
 	const { previousCommits, branchName, contributorInfo } = context;
 
 	let summary = `Branch: ${branchName}
