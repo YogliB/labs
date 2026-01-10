@@ -1,10 +1,10 @@
 ---
 id: task-031
 title: Add UI component tests
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-10 22:35'
-updated_date: '2026-01-10 22:38'
+updated_date: '2026-01-10 23:15'
 labels:
     - testing
     - phase-6
