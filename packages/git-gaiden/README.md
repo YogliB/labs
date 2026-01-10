@@ -1,11 +1,3 @@
-<file_path>
-labs/packages/git-gaiden/README.md
-</file_path>
-
-<edit_description>
-Create package README.md with title, tagline, features, installation, usage, options, examples, architecture overview, and requirements
-</edit_description>
-
 # git-gaiden
 
 Turn Git history into choose-your-own-adventure games

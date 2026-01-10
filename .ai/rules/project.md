@@ -12,10 +12,3 @@
 - **Incorrect:** `npm run test`
 
 All scripts in `package.json` should be executed via `bun run <script-name>`.
-
-### Why Bun?
-
-- Eliminates npm registry configuration issues
-- Faster package resolution and installation
-- Better monorepo support with workspaces
-- Compatible with Node.js packages and scripts
