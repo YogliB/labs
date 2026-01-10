@@ -1,10 +1,10 @@
 ---
 id: task-028
 title: Create narrative engine unit tests
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-10 22:35'
-updated_date: '2026-01-10 22:38'
+updated_date: '2026-01-10 22:54'
 labels:
     - testing
     - phase-3
