@@ -1,10 +1,10 @@
 ---
 id: task-032
 title: Implement actual LLM integration in narrative engine
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-10 22:37'
-updated_date: '2026-01-10 22:38'
+updated_date: '2026-01-10 23:17'
 labels:
     - implementation
     - phase-3
