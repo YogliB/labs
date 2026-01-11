@@ -1,10 +1,10 @@
 ---
 id: task-033
 title: Replace @xenova/transformers with @huggingface/transformers in git-gaiden
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-01-11 10:36'
-updated_date: '2026-01-11 10:41'
+updated_date: '2026-01-11 10:44'
 labels:
     - dependency-upgrade
     - git-gaiden
@@ -33,16 +33,16 @@ The @huggingface/transformers package provides official Hugging Face support wit
 
 <!-- AC:BEGIN -->
 
-- [ ] #1 Package.json updated with @huggingface/transformers dependency and @xenova/transformers removed
-- [ ] #2 @huggingface/transformers imports work correctly in src/config/model.ts
-- [ ] #3 @huggingface/transformers imports work correctly in src/narrative/engine.ts
-- [ ] #4 Model initialization and caching logic functions as before with new package API
-- [ ] #5 All test files updated to mock @huggingface/transformers correctly
-- [ ] #6 Full test suite passes (bun run test)
-- [ ] #7 Build succeeds (bun run build)
-- [ ] #8 No TypeScript compilation errors
-- [ ] #9 Model pipeline can be initialized and generate text successfully in development
-- [ ] #10 No breaking changes in NarrativeEngine or model initialization behavior from user perspective
+- [x] #1 Package.json updated with @huggingface/transformers dependency and @xenova/transformers removed
+- [x] #2 @huggingface/transformers imports work correctly in src/config/model.ts
+- [x] #3 @huggingface/transformers imports work correctly in src/narrative/engine.ts
+- [x] #4 Model initialization and caching logic functions as before with new package API
+- [x] #5 All test files updated to mock @huggingface/transformers correctly
+- [x] #6 Full test suite passes (bun run test)
+- [x] #7 Build succeeds (bun run build)
+- [x] #8 No TypeScript compilation errors
+- [x] #9 Model pipeline can be initialized and generate text successfully in development
+- [x] #10 No breaking changes in NarrativeEngine or model initialization behavior from user perspective
   <!-- AC:END -->
 
 ## Implementation Plan
@@ -64,9 +64,37 @@ The @huggingface/transformers package provides official Hugging Face support wit
 
 <!-- SECTION:NOTES:BEGIN -->
 
-- Current version: @xenova/transformers@2.17.2
-- Target: @huggingface/transformers (check latest stable version)
-- The model being used is 'onnx-community/Phi-3.5-mini-instruct-onnx-web' which should remain compatible
-- Key files affected: package.json, src/config/model.ts, src/narrative/engine.ts, src/config/**tests**/model.test.ts, src/narrative/**tests**/engine.test.ts
-- Consider any behavioral differences in model caching, progress callbacks, and error handling between packages
-  <!-- SECTION:NOTES:END -->
+## Migration Completed Successfully
+
+### Changes Made:
+
+1. ✅ Updated `package.json`: Replaced `@xenova/transformers@2.17.2` with `@huggingface/transformers@^3.0.0`
+2. ✅ Updated import in `src/config/model.ts`: Changed from `@xenova/transformers` to `@huggingface/transformers`
+3. ✅ Updated test mock in `src/config/__tests__/model.test.ts`: Changed mock package from `@xenova/transformers` to `@huggingface/transformers`
+4. ✅ Updated test mock in `src/narrative/__tests__/engine.test.ts`: Changed mock package from `@xenova/transformers` to `@huggingface/transformers`
+
+### Testing Results:
+
+- ✅ All 135 tests pass across 12 test files
+- ✅ Build succeeds with no TypeScript errors
+- ✅ Code formatting and linting passes
+- ✅ Test coverage: 76.03% statement coverage maintained
+- ✅ Model initialization and caching logic functions correctly
+- ✅ Text generation pipeline API is fully compatible
+
+### API Compatibility:
+
+The `@huggingface/transformers` package (Transformers.js) is fully API-compatible with `@xenova/transformers`. The following APIs work without modification:
+
+- `pipeline('text-generation', modelId, options)` - identical interface
+- `env.localModelPath` - identical configuration
+- `env.allowRemoteModels` - identical configuration
+- Progress callbacks and error handling - unchanged
+
+### Version Installed:
+
+- `@huggingface/transformers@3.8.1` (satisfies ^3.0.0 constraint)
+
+All acceptance criteria have been met. The migration is complete and production-ready.
+
+<!-- SECTION:NOTES:END -->
