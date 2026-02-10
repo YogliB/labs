@@ -32,6 +32,9 @@ export default defineConfig([
 				node: true,
 			},
 		},
+		rules: {
+			'import/no-unresolved': ['error', { ignore: ['^virtual:'] }],
+		},
 	},
 	storybook.configs['flat/recommended'],
 	prettier,

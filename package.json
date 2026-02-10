@@ -4,8 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"prepare": "husky && npm run prepare:ai",
-		"prepare:ai": "cat .ai/rules/*.md > AGENTS.md",
+		"prepare": "husky",
 		"format": "prettier --write .",
 		"lint": "eslint . --fix",
 		"backlog": "backlog",
