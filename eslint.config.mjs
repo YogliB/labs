@@ -18,6 +18,23 @@ export default defineConfig([
 			'packages/*/*.config.ts',
 		],
 	},
+	{
+		files: ['gitquest/**/*.js'],
+		languageOptions: {
+			globals: {
+				document: 'readonly',
+				fetch: 'readonly',
+				localStorage: 'readonly',
+				URL: 'readonly',
+				HTMLInputElement: 'readonly',
+				HTMLSelectElement: 'readonly',
+				HTMLTextAreaElement: 'readonly',
+			},
+		},
+		rules: {
+			'unicorn/prevent-abbreviations': 'off',
+		},
+	},
 	eslint.configs.recommended,
 	tseslint.configs.strict,
 	tseslint.configs.stylistic,

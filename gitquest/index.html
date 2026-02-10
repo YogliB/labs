@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>GitQuest</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<main class="layout">
+			<header class="header">
+				<h1>GitQuest</h1>
+				<p class="subtitle">
+					A textual quest through Git history (powered by the GitHub
+					API).
+				</p>
+			</header>
+
+			<section class="panel" aria-label="controls">
+				<div class="row">
+					<label for="repoCount">Top repos</label>
+					<select id="repoCount">
+						<option value="5">5</option>
+						<option value="10" selected>10</option>
+					</select>
+					<button id="refreshRepos" type="button">Refresh</button>
+				</div>
+
+				<details class="settings">
+					<summary>Settings</summary>
+					<div class="row">
+						<label for="token">GitHub token (optional)</label>
+						<input
+							id="token"
+							type="password"
+							autocomplete="off"
+							spellcheck="false"
+							placeholder="ghp_…"
+						/>
+						<button id="saveToken" type="button">Save</button>
+					</div>
+					<p class="hint">
+						Without a token you may hit the GitHub API rate limit
+						(60 requests/hour per IP).
+					</p>
+				</details>
+			</section>
+
+			<section class="panel" aria-label="game">
+				<div
+					id="status"
+					class="status"
+					role="status"
+					aria-live="polite"
+				></div>
+
+				<div id="view-repos" class="view">
+					<h2>Choose your quest</h2>
+					<ol id="repoList" class="repo-list"></ol>
+				</div>
+
+				<div id="view-commits" class="view hidden">
+					<div class="commit-toolbar">
+						<button id="backToRepos" type="button">← Back</button>
+						<div class="spacer"></div>
+						<button id="prevCommit" type="button">Prev</button>
+						<button id="nextCommit" type="button">Next</button>
+					</div>
+
+					<pre id="commitScreen" class="screen"></pre>
+					<p class="hint">
+						Tip: use keyboard ←/→ (or P/N) to traverse.
+					</p>
+				</div>
+			</section>
+
+			<footer class="footer">
+				<p>
+					Built for GitHub Pages. API calls go directly from your
+					browser to api.github.com.
+				</p>
+			</footer>
+		</main>
+
+		<script type="module" src="./app.js"></script>
+	</body>
+</html>
