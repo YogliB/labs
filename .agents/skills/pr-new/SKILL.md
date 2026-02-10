@@ -1,3 +1,8 @@
+---
+name: pr-new
+description: Create a draft pull request from the current Git branch using the GitHub CLI, following team conventions and ensuring commits comply with the Conventional Commit format.
+---
+
 # New Draft PR Command
 
 ## Description

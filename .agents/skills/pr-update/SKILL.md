@@ -1,3 +1,8 @@
+---
+name: pr-update
+description: Update an existing pull request's title and description to reflect the current branch state, utilizing smart merging to preserve manual edits.
+---
+
 # Update PR Command
 
 ## Description

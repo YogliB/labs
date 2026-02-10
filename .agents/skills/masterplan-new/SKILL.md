@@ -1,3 +1,8 @@
+---
+name: masterplan-new
+description: Create a comprehensive Masterplan for multi-repo work, sequential PRs, phased rollouts, high-risk changes, or major architecture.
+---
+
 # New Masterplan Command
 
 ## Description

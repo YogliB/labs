@@ -1,3 +1,8 @@
+---
+name: plan-from-conv
+description: Convert the active conversation (tasks, findings, and conclusions) into a clear planning prompt for the agent — suitable for Plan Mode execution.
+---
+
 # Plan from Conversation Command
 
 ## Description

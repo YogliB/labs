@@ -1,3 +1,8 @@
+---
+name: investigate
+description: Diagnose issues and errors systematically **without writing code** or modifying the system state.
+---
+
 # Investigate Command
 
 ## Description

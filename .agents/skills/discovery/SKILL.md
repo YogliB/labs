@@ -1,3 +1,8 @@
+---
+name: discovery
+description: Collect and summarize key information from multiple sources to provide actionable insights.
+---
+
 # Discover Command
 
 ## Description

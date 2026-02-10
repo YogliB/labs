@@ -1,3 +1,8 @@
+---
+name: review
+description: Review code changes, plans, or documentation and provide concise, actionable recommendations for improvement.
+---
+
 # Review Command
 
 ## Description

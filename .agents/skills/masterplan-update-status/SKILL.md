@@ -1,3 +1,8 @@
+---
+name: masterplan-update-status
+description: Sync PR status across an entire masterplan document, ensuring consistency between GitHub and the plan.
+---
+
 # Update Masterplan Status Command
 
 ## Description

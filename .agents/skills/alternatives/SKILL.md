@@ -1,3 +1,8 @@
+---
+name: alternatives
+description: Suggest **up to 3 viable alternatives** for code or design decisions before committing to an implementation.
+---
+
 # Alternatives Command
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: explore
+description: Explore new ideas and potential features — from raw concepts to partially-defined features.
+---
+
 # Explore Command
 
 ## Description

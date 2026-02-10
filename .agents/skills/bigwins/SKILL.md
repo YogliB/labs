@@ -1,3 +1,8 @@
+---
+name: bigwins
+description: Suggest **up to 3 high-impact improvements** (1–4 weeks each) across the **entire workspace** unless a scope is specified.
+---
+
 Here’s the requested concise version wrapped in triple quotes:
 
 # Big Wins Command

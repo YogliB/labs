@@ -1,3 +1,8 @@
+---
+name: quickwins
+description: Suggest **up to 3 quick-win improvements** (≤1h each) across the **entire workspace** unless a scope is specified.
+---
+
 # Quick Wins Command
 
 ## Description

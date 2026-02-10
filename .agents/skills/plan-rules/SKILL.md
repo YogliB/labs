@@ -1,3 +1,8 @@
+---
+name: plan-rules
+description: Defines the core rules and guidelines for creating valid, executable plans.
+---
+
 # Planning Rules Command
 
 ## Description
