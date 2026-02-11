@@ -1,40 +1,36 @@
-# AI Coding Guidelines for Labs Monorepo
+# AI Coding Guidelines for labs
 
 ## Architecture Overview
 
-This is a monorepo using npm workspaces, containing experimental projects. The main package is `commit-crawl`, a SolidStart application.
+This is a Bun-based monorepo with workspaces under `packages/`. The main project `commit-crawl` is a SolidStart application using Vinxi server, SolidJS for reactivity, and UnoCSS with wind4 preset for styling.
 
-- **Framework**: SolidJS with SolidStart for full-stack development
-- **Styling**: UnoCSS with Wind4 preset for utility-first CSS
-- **Build Tool**: Vinxi for server-side rendering and bundling
-- **Language**: TypeScript throughout
+- **File-based routing**: Routes defined in `src/routes/` with file names like `index.tsx`, `about.tsx`, `[...404].tsx`
+- **Path aliases**: `~/*` maps to `./src/*` (configured in `packages/commit-crawl/tsconfig.json`)
+- **Components**: Placed in `src/components/`, imported with `~/components/...`
 
 ## Development Workflow
 
-- **Start dev server**: `cd packages/commit-crawl && npm run dev` (uses Vinxi dev server)
-- **Build**: `cd packages/commit-crawl && npm run build`
-- **Lint and format**: From root, `npm run lint` (ESLint with auto-fix) and `npm run format` (Prettier)
-- **Backlog management**: `npm run backlog` or `npm run backlog:browser` using backlog.md
+- **Package manager**: Use Bun for all operations (`bun install`, `bun run`)
+- **Development**: `cd packages/commit-crawl && bun run dev` starts Vinxi dev server
+- **Building**: `bun run build` in package directory
+- **Linting/Formatting**: Root scripts `bun run lint` (ESLint with TypeScript, Prettier, SonarJS, Unicorn plugins) and `bun run format` (Prettier)
 
-## Code Patterns
+## Code Conventions
 
-- **File-based routing**: Routes defined in `src/routes/` with file names like `index.tsx`, `about.tsx`
-- **Component structure**: Components in `src/components/`, imported with `~` alias (e.g., `~/components/nav`)
-- **Styling**: Use UnoCSS classes directly in JSX, e.g., `class="text-center mx-auto text-gray-700 p-4"`
-- **Router usage**: Use `@solidjs/router` for navigation, e.g., `<A href="/about">` for links
-- **Reactive state**: Use `createSignal` for local state, e.g., in `counter.tsx`
+- **Styling**: Use UnoCSS utility classes (e.g., `text-sky-700`, `bg-gray-100` in `packages/commit-crawl/src/routes/index.tsx`). No custom CSS files.
+- **JSX**: Preserve JSX (not transform) as per `packages/commit-crawl/tsconfig.json`
+- **Imports**: Use path aliases for internal imports (e.g., `import Nav from "~/components/nav"` in `packages/commit-crawl/src/app.tsx`)
+- **Router**: Use `@solidjs/router` with `<A>` for links, `useLocation()` for active states (see `packages/commit-crawl/src/components/nav.tsx`)
+- **Suspense**: Wrap async content in `<Suspense>` (used in `packages/commit-crawl/src/app.tsx`)
 
-## File Structure
+## Key Files
 
-- `packages/commit-crawl/src/app.tsx`: Main app component with router setup
-- `packages/commit-crawl/src/routes/`: Page components
-- `packages/commit-crawl/src/components/`: Reusable components
 - `packages/commit-crawl/app.config.ts`: Vite config with UnoCSS plugin
-- Root `package.json`: Monorepo scripts and dev dependencies
+- `packages/commit-crawl/tsconfig.json`: TypeScript config with SolidJS JSX
+- Root `eslint.config.mjs`: Shared linting rules across workspace
+- Root `package.json`: Workspace config and dev scripts
 
-## Conventions
+## Communication Style
 
-- TypeScript with `type: "module"` in package.json
-- ESLint config in root `eslint.config.mjs` with plugins for TypeScript, Prettier, etc.
-- Prettier config in `.prettierrc`
-- Git hooks with Husky for pre-commit linting
+Follow the guidelines in `vscode-userdata:/Users/yogev.boaronben-har/Library/Application%20Support/Code/User/prompts/global.instructions.md`: Be direct, honest, challenge assumptions, correct technical errors without sugarcoating.</content>
+<parameter name="filePath">/Users/yogev.boaronben-har/dev/oss/labs/AGENTS.md
