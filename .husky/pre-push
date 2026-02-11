@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# Get changed TS/TSX files in the push
+changed_files=$(git diff --name-only $1..$2 | grep '\.tsx\?$')
+
+if [ -n "$changed_files" ]; then
+    echo "Running TSC on changed TS/TSX files:"
+    echo "$changed_files"
+    bunx tsc --project packages/commit-crawl/tsconfig.json $changed_files
+    if [ $? -ne 0 ]; then
+        echo "TSC failed. Push aborted."
+        exit 1
+    fi
+else
+    echo "No TS/TSX files changed."
+fi
