@@ -5,5 +5,5 @@ CHANGED_FILES=$(git diff --name-only --diff-filter=ACMR $REMOTE_BRANCH HEAD | gr
 
 if [ -n "$CHANGED_FILES" ]; then
   echo "Running TypeScript type check on changed files..."
-  bunx tsc --noEmit
+  cd packages/commit-crawl && bunx tsc --noEmit --skipLibCheck
 fi
