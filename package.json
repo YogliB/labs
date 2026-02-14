@@ -8,6 +8,7 @@
 		"format": "prettier --write .",
 		"lint": "eslint . --fix",
 		"cc:dev": "bun run --filter commit-crawl dev",
+		"cc:storybook": "bun run --filter commit-crawl storybook",
 		"knip": "knip"
 	},
 	"repository": {
