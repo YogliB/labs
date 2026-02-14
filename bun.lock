@@ -8,7 +8,6 @@
         "@eslint/js": "9.39.2",
         "@types/node": "25.2.3",
         "@typescript-eslint/parser": "8.52.0",
-        "backlog.md": "1.28.1",
         "eslint": "9.39.2",
         "eslint-config-prettier": "10.1.8",
         "eslint-import-resolver-typescript": "4.4.4",
@@ -18,7 +17,6 @@
         "eslint-plugin-storybook": "10.1.11",
         "eslint-plugin-unicorn": "62.0.0",
         "husky": "9.1.7",
-        "i": "0.3.7",
         "knip": "5.83.1",
         "lint-staged": "16.2.7",
         "prettier": "3.7.4",
@@ -688,18 +686,6 @@
 
     "babel-preset-solid": ["babel-preset-solid@1.9.10", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/babel-preset-solid/-/babel-preset-solid-1.9.10.tgz", { "dependencies": { "babel-plugin-jsx-dom-expressions": "^0.40.3" }, "peerDependencies": { "@babel/core": "^7.0.0", "solid-js": "^1.9.10" }, "optionalPeers": ["solid-js"] }, "sha512-HCelrgua/Y+kqO8RyL04JBWS/cVdrtUv/h45GntgQY+cJl4eBcKkCDV3TdMjtKx1nXwRaR9QXslM/Npm1dxdZQ=="],
 
-    "backlog.md": ["backlog.md@1.28.1", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/backlog.md/-/backlog.md-1.28.1.tgz", { "optionalDependencies": { "backlog.md-darwin-arm64": "1.28.1", "backlog.md-darwin-x64": "1.28.1", "backlog.md-linux-arm64": "1.28.1", "backlog.md-linux-x64": "1.28.1", "backlog.md-windows-x64": "1.28.1" }, "bin": { "backlog": "cli.js" } }, "sha512-o/cjGTLg5vzfXxMkCbS6IIBQbN375YxDox1jn+L68Ewk6GnZAmeS/a0cH9dWQuqVv8OZmQT6xHjubCzZhajD0g=="],
-
-    "backlog.md-darwin-arm64": ["backlog.md-darwin-arm64@1.28.1", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/backlog.md-darwin-arm64/-/backlog.md-darwin-arm64-1.28.1.tgz", { "os": "darwin", "cpu": "arm64" }, "sha512-dydD/hv4vVZFzp3lsWPJ5NBhEcNgEer5l2qOA1hNJxgmmwRGZmfEs8a7nzNgcEXib148NstWL0o3f6qNlRjZsw=="],
-
-    "backlog.md-darwin-x64": ["backlog.md-darwin-x64@1.28.1", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/backlog.md-darwin-x64/-/backlog.md-darwin-x64-1.28.1.tgz", { "os": "darwin", "cpu": "x64" }, "sha512-ZxV0K0/vedBzf8+af3gCrISZZNb+Vy9VBLGU0IFFrDf71LAbrh28D91Wy0MdhXjy8Nt8ywzZZo77R3aLRv7uWg=="],
-
-    "backlog.md-linux-arm64": ["backlog.md-linux-arm64@1.28.1", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/backlog.md-linux-arm64/-/backlog.md-linux-arm64-1.28.1.tgz", { "os": "linux", "cpu": "arm64" }, "sha512-d5rMnuSTufAj4iQqzCknCfFaOj32MUMQY2T5caIy1SKDfMUt3dSvsm2wBJHUujJKjH60flDIUple5ywJsJj8DQ=="],
-
-    "backlog.md-linux-x64": ["backlog.md-linux-x64@1.28.1", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/backlog.md-linux-x64/-/backlog.md-linux-x64-1.28.1.tgz", { "os": "linux", "cpu": "x64" }, "sha512-ZwlGD/tCGseCA9CQhm+s3W5h477Mcyqa8P/KZ9hs6g62VYp2IK30/eFLqq48EEGe15qSWz7Aq/cZ6yfVd9rSrw=="],
-
-    "backlog.md-windows-x64": ["backlog.md-windows-x64@1.28.1", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/backlog.md-windows-x64/-/backlog.md-windows-x64-1.28.1.tgz", { "os": "win32", "cpu": "x64" }, "sha512-ZcH0UqBTi0LcLMpEr5d8Hv5dwADLl63SUTPcGZryDfPKuBmkWFKYtEbYBx7NlUEFV8N6wrantN4FnHJn857oIg=="],
-
     "balanced-match": ["balanced-match@1.0.2", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/balanced-match/-/balanced-match-1.0.2.tgz", {}, "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="],
 
     "bare-events": ["bare-events@2.8.2", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/bare-events/-/bare-events-2.8.2.tgz", { "peerDependencies": { "bare-abort-controller": "*" }, "optionalPeers": ["bare-abort-controller"] }, "sha512-riJjyv1/mHLIPX4RwiK+oW9/4c3TEUeORHKefKAKnZ5kyslbN+HXowtbaVEqt4IMUB7OXlfixcs6gsFeo/jhiQ=="],
@@ -1137,8 +1123,6 @@
     "human-signals": ["human-signals@5.0.0", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/human-signals/-/human-signals-5.0.0.tgz", {}, "sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ=="],
 
     "husky": ["husky@9.1.7", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/husky/-/husky-9.1.7.tgz", { "bin": { "husky": "bin.js" } }, "sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA=="],
-
-    "i": ["i@0.3.7", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/i/-/i-0.3.7.tgz", {}, "sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q=="],
 
     "ieee754": ["ieee754@1.2.1", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/ieee754/-/ieee754-1.2.1.tgz", {}, "sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA=="],
 
