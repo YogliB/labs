@@ -1,6 +1,6 @@
 import { A } from '@solidjs/router';
 
-export default function FrontPageV2() {
+export default function TerminalHome() {
 	return (
 		<div class="min-h-screen bg-black text-green-400 font-mono p-8">
 			<div class="max-w-4xl mx-auto">

@@ -7,7 +7,8 @@
 		"prepare": "husky",
 		"format": "prettier --write .",
 		"lint": "eslint . --fix",
-		"cc:dev": "bun run --filter commit-crawl dev"
+		"cc:dev": "bun run --filter commit-crawl dev",
+		"knip": "knip"
 	},
 	"repository": {
 		"type": "git",
@@ -23,6 +24,7 @@
 	"homepage": "https://github.com/YogliB/labs#readme",
 	"devDependencies": {
 		"@eslint/js": "9.39.2",
+		"@types/node": "25.2.3",
 		"@typescript-eslint/parser": "8.52.0",
 		"backlog.md": "1.28.1",
 		"eslint": "9.39.2",
@@ -35,8 +37,10 @@
 		"eslint-plugin-unicorn": "62.0.0",
 		"husky": "9.1.7",
 		"i": "0.3.7",
+		"knip": "5.83.1",
 		"lint-staged": "16.2.7",
 		"prettier": "3.7.4",
+		"typescript": "5.9.3",
 		"typescript-eslint": "8.52.0"
 	},
 	"workspaces": [
