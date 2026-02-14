@@ -4,6 +4,10 @@
 
 The UI design system for all code in this monorepo is Atomic Design. Organize components into atoms (basic elements like buttons), molecules (combinations of atoms), organisms (complex UI sections), templates (page layouts), and pages (specific instances).
 
+Atomic components should be placed in corresponding subdirectories under `components/`: `atoms/`, `molecules/`, `organisms/`, `templates/`, `pages/`. Each subdirectory must have an `index.ts` or `index.tsx` file that exports all components within it.
+
+For experiments (e.g., "create 5 variations for X"), bypass Atomic Design to prioritize speed and simplicity. Place experimental components directly in `components/experiments/` without breaking them into atomic parts.
+
 ## Component Standards
 
 Each component must have:
