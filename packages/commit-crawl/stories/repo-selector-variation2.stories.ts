@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from 'storybook-solidjs-vite';
 
-import RepoSelectorVariation2 from '../src/components/experiments/repo-selector-variation2';
+import RepoSelector from '../src/components/repo-selector';
 
-const meta: Meta<typeof RepoSelectorVariation2> = {
-	title: 'Experiments/Repo Selector Variation 2',
-	component: RepoSelectorVariation2,
+const meta: Meta<typeof RepoSelector> = {
+	title: 'Components/Repo Selector',
+	component: RepoSelector,
 };
 
 export default meta;

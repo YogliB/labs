@@ -1,6 +1,7 @@
-import { A } from '@solidjs/router';
+import { A, useNavigate } from '@solidjs/router';
 
 export default function TerminalHome() {
+	const navigate = useNavigate();
 	return (
 		<div class="min-h-screen bg-black text-green-400 font-mono p-8">
 			<div class="max-w-4xl mx-auto">
@@ -35,7 +36,12 @@ export default function TerminalHome() {
 					</div>
 				</div>
 				<div class="mt-12 flex flex-col gap-4">
-					<button class="btn btn-primary">Start Crawling</button>
+					<button
+						class="btn btn-primary"
+						onClick={() => navigate('/select-repo')}
+					>
+						Start Crawling
+					</button>
 					<button class="btn btn-secondary">
 						Load Previous Session
 					</button>

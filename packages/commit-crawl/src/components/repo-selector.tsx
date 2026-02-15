@@ -8,7 +8,7 @@ const predefinedRepos = [
 	{ name: 'Node.js', owner: 'nodejs', repo: 'node' },
 ];
 
-export default function RepoSelectorVariation2() {
+export default function RepoSelector() {
 	const [selectedRepo, setSelectedRepo] = createSignal('');
 	const [customRepo, setCustomRepo] = createSignal('');
 
