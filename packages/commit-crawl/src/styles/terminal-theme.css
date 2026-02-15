@@ -1,0 +1,62 @@
+[data-theme='terminal'] {
+	/* Color scheme for browser UI */
+	color-scheme: dark;
+
+	/* Base colors (backgrounds and text) */
+	--color-base-100: oklch(0 0 0); /* Main background - black */
+	--color-base-200: oklch(0.1 0 0); /* Slightly lighter background */
+	--color-base-300: oklch(0.2 0 0); /* Even lighter */
+	--color-base-content: oklch(
+		0.792 0.209 151.711
+	); /* Main text - green-400 */
+
+	/* Primary colors (buttons, links) */
+	--color-primary: oklch(
+		0.627 0.194 149.214
+	); /* Primary button - green-600 */
+	--color-primary-content: oklch(0 0 0); /* Primary text - black */
+
+	/* Secondary colors */
+	--color-secondary: oklch(
+		0.446 0.03 256.802
+	); /* Secondary button - gray-600 */
+	--color-secondary-content: oklch(0.985 0 0); /* Secondary text - white */
+
+	/* Accent colors (highlights, warnings) */
+	--color-accent: oklch(0.852 0.199 91.936); /* Accent - yellow-400 */
+	--color-accent-content: oklch(0 0 0); /* Accent text - black */
+
+	/* Neutral colors (borders, dividers) */
+	--color-neutral: oklch(0.2 0 0); /* Dark neutral */
+	--color-neutral-content: oklch(
+		0.792 0.209 151.711
+	); /* Neutral text - green */
+
+	/* Status colors */
+	--color-info: oklch(0.792 0.209 151.711); /* Info - green */
+	--color-info-content: oklch(0 0 0);
+	--color-success: oklch(0.792 0.209 151.711); /* Success - green */
+	--color-success-content: oklch(0 0 0);
+	--color-warning: oklch(0.852 0.199 91.936); /* Warning - yellow */
+	--color-warning-content: oklch(0 0 0);
+	--color-error: oklch(
+		0.627 0.194 149.214
+	); /* Error - red (using primary for now) */
+	--color-error-content: oklch(0.985 0 0);
+
+	/* Border radius */
+	--radius-selector: 0.25rem;
+	--radius-field: 0.25rem;
+	--radius-box: 0.5rem;
+
+	/* Base sizes */
+	--size-selector: 0.25rem;
+	--size-field: 0.25rem;
+
+	/* Border size */
+	--border: 1px;
+
+	/* Effects */
+	--depth: 1;
+	--noise: 0;
+}

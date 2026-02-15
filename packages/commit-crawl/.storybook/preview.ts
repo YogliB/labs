@@ -1,9 +1,12 @@
+import 'virtual:uno.css';
+import 'daisyui/dist/full.css';
+
 import addonA11y from '@storybook/addon-a11y';
-import { definePreview, createJSXDecorator } from 'storybook-solidjs-vite';
+import { definePreview } from 'storybook-solidjs-vite';
 
 export default definePreview({
 	addons: [addonA11y()],
-	decorators: [createJSXDecorator()],
+	decorators: [],
 	parameters: {
 		// automatically create action args for all props that start with 'on'
 		actions: {

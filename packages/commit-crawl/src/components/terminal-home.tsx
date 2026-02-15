@@ -35,10 +35,8 @@ export default function TerminalHome() {
 					</div>
 				</div>
 				<div class="mt-12 flex flex-col gap-4">
-					<button class="bg-green-600 hover:bg-green-500 text-black px-6 py-3 rounded font-bold">
-						Start Crawling
-					</button>
-					<button class="bg-gray-600 hover:bg-gray-500 text-white px-6 py-3 rounded">
+					<button class="btn btn-primary">Start Crawling</button>
+					<button class="btn btn-secondary">
 						Load Previous Session
 					</button>
 				</div>
