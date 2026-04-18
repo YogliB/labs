@@ -24,34 +24,6 @@
         "typescript-eslint": "8.52.0",
       },
     },
-    "packages/commit-crawl": {
-      "name": "commit-crawl",
-      "dependencies": {
-        "@solidjs/router": "^0.15.3",
-        "@solidjs/start": "^1.2.0",
-        "@unocss/preset-wind4": "^66.5.2",
-        "@unocss/reset": "^66.5.2",
-        "daisyui": "^4.12.10",
-        "solid-js": "^1.9.9",
-        "unocss": "^66.5.2",
-        "vinxi": "^0.5.8",
-      },
-      "devDependencies": {
-        "@chromatic-com/storybook": "^4.2.0-next.1",
-        "@storybook/addon-a11y": "^10.2.8",
-        "@storybook/addon-links": "^10.2.8",
-        "@storybook/addon-onboarding": "^10.2.8",
-        "@storybook/addon-vitest": "^10.2.8",
-        "@vitest/browser": "^4.0.18",
-        "@vitest/browser-playwright": "^4.0.18",
-        "@vitest/coverage-v8": "^4.0.18",
-        "playwright": "^1.58.2",
-        "storybook": "^10.2.8",
-        "storybook-solidjs-vite": "10.0.9",
-        "vite": "^6.0.0",
-        "vitest": "^4.0.18",
-      },
-    },
   },
   "packages": {
     "@adobe/css-tools": ["@adobe/css-tools@4.4.4", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/@adobe/css-tools/-/css-tools-4.4.4.tgz", {}, "sha512-Elp+iwUx5rN5+Y8xLt5/GRoG20WGoDCQ/1Fb+1LiGtvwbDavuSk0jhD/eZdckHAuzcDzccnkv+rEjyWfRx18gg=="],
@@ -782,7 +754,6 @@
 
     "commander": ["commander@14.0.2", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/commander/-/commander-14.0.2.tgz", {}, "sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ=="],
 
-    "commit-crawl": ["commit-crawl@workspace:packages/commit-crawl"],
 
     "commondir": ["commondir@1.0.1", "https://cyberark.jfrog.io/artifactory/api/npm/everest-npm-virtual/commondir/-/commondir-1.0.1.tgz", {}, "sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg=="],
 
