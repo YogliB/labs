@@ -1,9 +1,1 @@
 #!/usr/bin/env sh
-
-REMOTE_BRANCH=$(git rev-parse --abbrev-ref HEAD@{upstream} 2>/dev/null || echo "origin/main")
-CHANGED_FILES=$(git diff --name-only --diff-filter=ACMR $REMOTE_BRANCH HEAD | grep -E '\.(ts|tsx)$' || true)
-
-if [ -n "$CHANGED_FILES" ]; then
-  echo "Running TypeScript type check on changed files..."
-  cd packages/commit-crawl && bunx tsc --noEmit --skipLibCheck
-fi

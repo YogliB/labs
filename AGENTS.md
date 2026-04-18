@@ -25,7 +25,7 @@ When committing and pushing, using `--no-verify` is strictly prohibited unless g
 
 ## Code Reuse in Monorepo
 
-Leverage existing code wherever possible. Reuse components, utilities, and patterns from packages like `commit-crawl`. Take inspiration from existing implementations (e.g., SolidJS components with UnoCSS/DaisyUI styling, file-based routing). Follow established conventions from instruction files (e.g., no comments, intention-revealing names, honesty in communication).
+Leverage existing code wherever possible. Reuse components, utilities, and patterns from existing packages. Follow established conventions from instruction files (e.g., no comments, intention-revealing names, honesty in communication).
 
 ## Agent Skills Integration
 
